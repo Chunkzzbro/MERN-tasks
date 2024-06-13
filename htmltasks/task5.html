@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 45%;
+            border: 1px solid black;
+        }
+
+
+        td {
+            border: 1px solid black;
+        }
+
+        input {
+            border-style: none;
+        }
+
+
+        .column1 {
+            width: 30%;
+        }
+
+        .column2 {
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td class="column1"><label for="name">Full Name:</label></td>
+                <td class="column2"><input type="text" id="name" size="70%" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="username">Username:</label></td>
+                <td class="column2"><input type="text" id="username" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="password">Password:</label></td>
+                <td class="column2"><input type="password" id="password" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="repassword">Re password:</label></td>
+                <td class="column2"><input type="password" id="repassword" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="address">Address:</label></td>
+                <td class="column2"><input type="text" id="address"></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="age">Age:</label></td>
+                <td class="column2"><input type="text" id="age" pattern="[0-9]+" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="gender">Gender:</label></td>
+                <td class="column2"><select name="gender" id="gender">
+                        <option value="Male">Male </option>
+                        <option value="Female">Female </option>
+                        <option value="Transgender">Transgender </option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td class="column1">
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
