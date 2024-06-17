@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #vertical {
+            width: 30%;
+        }
+
+        #box {
+            border: 1px solid black;
+            height: fit-content;
+            max-width: fit-content;
+        }
+
+        #boxin {
+            padding: 1px;
+            margin: 10px;
+            border: 1px solid white;
+        }
+
+        #horizontal {
+            width: 70%;
+        }
+
+        #navbar1 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-size: large;
+        }
+
+        .item {
+            background-color: rgb(173, 217, 230);
+            color: rgb(10, 21, 175);
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .item:hover {
+            background-color: rgb(254, 165, 0);
+            transition: 100ms ease-in-out;
+        }
+
+        .item a:hover {
+            color: white;
+
+        }
+
+        #navbar2 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="vertical">
+            <h3>Vertical Navigation Bar</h3>
+            <p>Hover to see the changes in background color and text color</p>
+            <div id="box">
+                <div id="boxin">
+                    <nav id="navbar1">
+                        <div class="item">
+                            <a href="#" id="home">Home</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Java</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">CSS</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">HTML</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Bootstrap</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="horizontal">
+            <h3>Horizontal Navigation Bar</h3>
+            <p>Hover to see the changes in background color and text color</p>
+            <div id="box">
+                <div id="boxin">
+                    <nav id="navbar2">
+                        <div class="item">
+                            <a href="#">Home</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Java</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">CSS</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">HTML</a>
+                        </div>
+                        <div class="item">
+                            <a href="#">Bootstrap</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

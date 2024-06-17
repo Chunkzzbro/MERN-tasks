@@ -24,35 +24,48 @@
 
         .column1 {
             width: 30%;
+            text-align: center;
+            font-weight: bold;
         }
 
         .column2 {
             width: 70%;
         }
+
+        form {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
+    <h1 style="text-align: center;color:blue"> Registration Form</h1>
+
     <form>
         <table>
             <tr>
-                <td class="column1"><label for="name">Full Name:</label></td>
-                <td class="column2"><input type="text" id="name" size="70%" /></td>
+                <td class="column1"><label for="fname">First Name</label></td>
+                <td class="column2"><input type="text" id="fname" size="70%" /></td>
             </tr>
             <tr>
-                <td class="column1"><label for="username">Username:</label></td>
-                <td class="column2"><input type="text" id="username" size="70%" /></td>
+                <td class="column1"><label for="lname">Last Name</label></td>
+                <td class="column2"><input type="text" id="lname" size="70%" /></td>
             </tr>
             <tr>
-                <td class="column1"><label for="password">Password:</label></td>
+                <td class="column1"><label for="email">Email</label></td>
+                <td class="column2"><input type="email" id="email" size="70%" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="password">Password</label></td>
                 <td class="column2"><input type="password" id="password" size="70%" /></td>
             </tr>
             <tr>
-                <td class="column1"><label for="repassword">Re-enter password:</label></td>
+                <td class="column1"><label for="repassword">Re-enter password</label></td>
                 <td class="column2"><input type="password" id="repassword" size="70%" /></td>
             </tr>
             <tr>
-                <td class="column1"><label for="gender">Gender:</label></td>
+                <td class="column1"><label for="gender">Gender</label></td>
                 <td class="column2">
                     <input type="radio" name="gender" id="gender" />Male
                     <br>
@@ -63,11 +76,15 @@
             </tr>
 
             <tr>
-                <td class="column1"><label for="age">Age:</label></td>
+                <td class="column1"><label for="age">Age</label></td>
                 <td class="column2"><input type="text" id="age" pattern="[0-9]+" size="70%" /></td>
             </tr>
             <tr>
-                <td class="column1"><label for="Address">Address:</label></td>
+                <td class="column1"><label for="phone">Phone Number</label></td>
+                <td class="column2"><input type="text" id="phone" pattern="[0-9]+" size="70%" /></td>
+            </tr>
+            <tr>
+                <td class="column1"><label for="Address">Address</label></td>
                 <td>
                     <textarea id="address" rows="4" cols="70%">
 
@@ -75,15 +92,43 @@
                 </td>
             </tr>
             <tr>
-                <td class="column1"><label for="State">State:</label></td>
-                <td class="column2"><input type="password" id="repassword" size="70%" /></td>
+                <td class="column1"><label for="State">State</label></td>
+                <td class="column2"><input type="text" id="State" size="70%" /></td>
             </tr>
-
             <tr>
-                <td class="column1">
-                    <input type="submit" value="Save" />
+                <td class="column1"><label for="State">Country</label></td>
+                <td class="column2">
+                    <select name="country" id="country">
+                        <option value="NULL">Choose your country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Japan">Japan</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="column1"><label for="lang">Language Known</label></td>
+                <td class="column2">
+                    <input type="checkbox" name="lang" id="lang" />English
+                    <input type="checkbox" name="lang" id="lang" />Kannada
+                    <input type="checkbox" name="lang" id="lang" />Hindi
+                    <input type="checkbox" name="lang" id="lang" />Telugu
+
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="lang" id="lang" /> Hereby I declare all the given detials are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: end;">
+                    Log in to <a href="https://codemithra.com/">Ethnus</a> website
+                </td>
+
+            </tr>
+
         </table>
     </form>
 </body>
