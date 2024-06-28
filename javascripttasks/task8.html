@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .warning {
+            color: red;
+        }
+
+        .error {
+            border: 3px solid red;
+        }
+
+        .formcontainer {
+            background-image: radial-gradient(circle at top, #fefed8 20%, #ec9ab1, #d371bf);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        #regbtn {
+            background-color: #f80500;
+            color: white;
+            text-transform: capitalize;
+            border: 1.5px solid black;
+            border-radius: 20px;
+            padding: 5px 20px;
+            margin: 20px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #regist {
+            display: inherit;
+            flex-direction: column;
+        }
+
+        #confirmation {
+            position: relative;
+            left: 3.6vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formcontainer col-md-8 col-lg-5" id="regist">
+        <h1 class="text-center text-primary">Registration Form</h1>
+        <br>
+        <form id="StudentForm">
+            <div class="mb-2 row">
+                <label for="fname" class="col-sm-4 col-form-label text-end"><b>First Name</b></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="fname" />
+                    <span id="fnError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="lname" class="col-sm-4 col-form-label text-end"><b>Last Name</b></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="lname" />
+                    <span id="lnError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Email" class="col-sm-4 col-form-label text-end"><b>Email</b></label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="Email" />
+                    <span id="EmailError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Password" class="col-sm-4 col-form-label text-end"><b>Password</b></label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="Password" />
+                    <span id="PassError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="RePassword" class="col-sm-4 col-form-label text-end"><b>Re-enter Password</b></label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="RePassword" />
+                    <span id="RePassError" class="warning"></span>
+                </div>
+            </div>
+            <fieldset class="mb-2 row">
+                <legend class="col-form-label col-sm-4 pt-3 text-end"><b>Gender</b></legend>
+                <div class="col-sm-8">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gen" id="Male" value="M" />
+                        <label class="form-check-label" for="Male">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gen" id="Female" value="F" />
+                        <label class="form-check-label" for="Female">Female</label>
+                    </div>
+                    <span id="GenError" class="warning"></span>
+                </div>
+            </fieldset>
+            <div class="mb-2 row">
+                <label for="Age" class="col-sm-4 col-form-label text-end"><b>Age</b></label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Age" />
+                    <span id="AgeError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Phone" class="col-sm-4 col-form-label text-end"><b>Phone Number</b></label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="Phone" />
+                    <span id="PhnError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Address" class="col-sm-4 col-form-label text-end"><b>Address</b></label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" id="Address" rows="3"></textarea>
+                    <span id="AdrError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="State" class="col-sm-4 col-form-label text-end"><b>State</b></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="State" />
+                    <span id="StateError" class="warning"></span>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Country" class="col-sm-4 col-form-label text-end"><b>Country</b></label>
+                <div class="col-sm-8">
+                    <select class="form-select" id="Country">
+                        <option value="dummy">Choose your country</option>
+                        <option value="ind">India</option>
+                        <option value="rus">Russia</option>
+                        <option value="uk">UK</option>
+                        <option value="us">US</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="Lng" class="col-sm-4 col-form-label text-end"><b>Languages known</b></label>
+                <div class="col-sm-8 d-flex flex-wrap">
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="checkbox" id="eng" name="eng" />
+                        <label class="form-check-label" for="eng">English</label>
+                    </div>
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="checkbox" id="knd" name="knd" />
+                        <label class="form-check-label" for="knd">Kannada</label>
+                    </div>
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="checkbox" id="hin" name="hin" />
+                        <label class="form-check-label" for="hin">Hindi</label>
+                    </div>
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="checkbox" id="tel" name="tel" />
+                        <label class="form-check-label" for="tel">Telugu</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 form-check" id="confirmation">
+                    <input class="form-check-input" type="checkbox" id="decl" name="decl" />
+                    <label class="form-check-label" for="decl">Hereby I declare all the details are true</label>
+                </div>
+                <span id="DeclError" class="warning"></span>
+            </div>
+            <div class="text-end mt-3">
+                <span>Log in to <a href="#">Ethnus</a> website</span>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger" id="regbtn">Register</button>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        document
+            .getElementById("regbtn")
+            .addEventListener("click", function submitHandler(event) {
+                event.preventDefault();
+                fnameChecker();
+                lnameChecker();
+                emailChecker();
+                passchecker();
+                repasschecker();
+                genchecker();
+                agechecker();
+                phnchecker();
+                adrchecker();
+                statechecker();
+                declchecker();
+            });
+
+        let fname = document.getElementById("fname");
+        let fnameError = document.getElementById("fnError");
+        function fnameChecker() {
+            if (fname.value.trim().length > 30) {
+                fnameError.textContent = "First name should not exceed 30 characters!";
+            } else if (!fname.value) {
+                fnameError.textContent = "POOR";
+            } else if (!/^[a-zA-Z]+$/.test(fname.value.trim())) {
+                fnameError.textContent = "First name should contain only alphabets!";
+            } else {
+                fnameError.textContent = "";
+            }
+        }
+
+        let lname = document.getElementById("lname");
+        let lnameError = document.getElementById("lnError");
+        function lnameChecker() {
+            if (lname.value.trim().length > 30) {
+                lnameError.textContent = "Name should not exceed 30 characters!";
+            } else if (!lname.value) {
+                lnameError.textContent = "POOR";
+            } else if (!/^[a-zA-Z]+$/.test(lname.value.trim())) {
+                lnameError.textContent = "Name should contain only alphabets!";
+            } else {
+                lnameError.textContent = "";
+            }
+        }
+
+        let Email = document.getElementById("Email");
+        let EmailError = document.getElementById("EmailError");
+        function emailChecker() {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(Email.value.trim())) {
+                EmailError.textContent = "POOR";
+            } else {
+                EmailError.textContent = "";
+            }
+        }
+
+        let pass = document.querySelector("#Password");
+        let passError = document.querySelector("#PassError");
+        function passchecker() {
+            if (!pass.value) {
+                passError.textContent = "POOR";
+            }
+        }
+
+        let repass = document.querySelector("#RePassword");
+        let repassError = document.querySelector("#RePassError");
+        function repasschecker() {
+            if (!repass.value) {
+                repassError.textContent = "POOR OR MISMATCH";
+            }
+        }
+
+        let m = document.querySelector("#Male");
+        let f = document.querySelector("#Female");
+        let genError = document.querySelector("#GenError");
+        function genchecker() {
+            if (!m.checked && !f.checked) {
+                genError.textContent = "Please select your gender";
+            }
+        }
+
+        let age = document.querySelector("#Age");
+        let ageError = document.querySelector("#AgeError");
+        function agechecker() {
+            if (!age.value) {
+                ageError.textContent = "POOR";
+            }
+        }
+
+        let phn = document.querySelector("#Phone");
+        let phnError = document.querySelector("#PhnError");
+        function phnchecker() {
+            if (!phn.value) {
+                phnError.textContent = "POOR";
+            }
+        }
+
+        let adr = document.querySelector("#Address");
+        let adrError = document.querySelector("#AdrError");
+        function adrchecker() {
+            if (!adr.value) {
+                adrError.textContent = "POOR";
+            }
+        }
+
+        let state = document.querySelector("#State");
+        let stateError = document.querySelector("#StateError");
+        function statechecker() {
+            if (!state.value) {
+                stateError.textContent = "POOR";
+            }
+        }
+
+        let decl = document.querySelector("#decl");
+        let declCont = document.querySelector("#confirmation");
+        function declchecker() {
+            if (!decl.checked) {
+                confirmation.classList.add("error");
+            }
+        }
+    </script>
+</body>
+
+</html>
